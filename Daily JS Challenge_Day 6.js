@@ -108,3 +108,27 @@ In this example, traversing the map using this slope would cause you to encounte
 
 Starting at the top-left corner of your map and following a slope of right 3 and down 1, how many trees would you encounter?
  */
+
+try {
+    const input = fs.readFileSync('Daily JS Challenge_Day 6_Input.txt', 'utf8').split('\r\n');
+    console.log(input);
+
+    const right = 3;
+    const down = 1;
+
+    let x = 0;
+    let trees = 0;
+
+    for (let i = 0; i < input.length; i++) {
+        if (input[i][x % input[0].length] === "#") {
+            trees++;
+        }
+        x += right;
+    }
+
+    console.log("Encountered trees:", trees);
+}
+
+catch(err){
+    console.log(err);
+}
